@@ -2,7 +2,7 @@
 
 {% block contenido %}
     <h1>{{ object.title }}</h1>
-    <p>Creado: {{object.created_at}}, actualizado: {{object.updated_at}}</p>
+    <p>Creado: {{object.created_at}} por {{object.author}}, actualizado: {{object.updated_at}}</p>
     <main>
         {{object.body|linebreaks}}
     </main>

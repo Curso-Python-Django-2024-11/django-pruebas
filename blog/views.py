@@ -10,6 +10,9 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/postlist.html'
 
+    def get_queryset(self):
+        return Post.objects.filter(published=True).order_by("-created_at")
+
 
 # Detalle de un post concreto
 class PostDetailView(DetailView):

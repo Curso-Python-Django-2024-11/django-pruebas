@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1, h2, h3 {
+            color: red;
+        }
+        html {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        nav {
+            background-color: darkcyan;
+            padding: 10px;
+        }
+        footer {
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href = "{%url 'post_list' %}">Publicaciones</a>
+    </nav>
+    {% block contenido %}
+    {% endblock %}
+
+    {% include 'blog/footer.html' %}
+</body>
+</html>

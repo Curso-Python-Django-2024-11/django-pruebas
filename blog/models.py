@@ -10,6 +10,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     published = models.BooleanField(default=False)
     author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True)
+    featured_image = models.ImageField(upload_to='media/%Y/%m/%d', null=True, blank=True)
 
     def __str__(self):
         return self.title

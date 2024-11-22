@@ -1,9 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block contenido %}
-    <h1>{{ object.title }}</h1>
-    <p>Creado: {{object.created_at}} por {{object.author}}, actualizado: {{object.updated_at}}</p>
-    <main>
-        {{object.body|linebreaks}}
-    </main>
+    <div class="container">
+        <h1>{{ object.title }}</h1>
+        {% if object.featured_image %}
+        <img src="{{object.featured_image.url}}" alt="{{object.title}}">
+        {% endif %}
+        <p>Creado: {{object.created_at}} por {{object.author}}, actualizado: {{object.updated_at}}</p>
+        <main>
+            {{object.body|linebreaks}}
+        </main>
+    </div>
 {% endblock %}
